@@ -5,20 +5,16 @@ public class Main {
 //CASE1//
         System.out.println("CASE1");
         int clientOS = 1;
-        switch (clientOS) {
-            case 0:
-                System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
 
-            case 1:
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
+        if (clientOS == 1) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
 
-            default:
-                System.out.println("Ошибка");
-
-
+        } else if (clientOS == 0) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Ошибка");
         }
+
         System.out.println("     ");
 
 
@@ -26,17 +22,17 @@ public class Main {
         System.out.println("CASE2");
         int clientDeviceYear = 2015;
 
-        if (clientDeviceYear >= 2015 && clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientDeviceYear < 2015 && clientOS == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            }
-        } else if (clientDeviceYear >= 2015 && clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-            if (clientDeviceYear < 2015 && clientOS == 1) {
-                System.out.println("Установите облегченную версию приложения для android по ссылке");
-            }
+        if (clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения");
+        } else {
+            System.out.println("Установите облегчённую версию приложения");
         }
+        if (clientOS == 1) {
+            System.out.println("для IOS по ссылке.");
+        } else {
+            System.out.println("для Android по ссылке.");
+        }
+
         System.out.println("     ");
 
 
@@ -44,7 +40,7 @@ public class Main {
         System.out.println("CASE3");
         int year = 1924;
 
-        if (year >= 1584 && (year % 4) == 0 && (year % 100) != 0) {
+        if (year >= 1584 && (year % 4) == 0 && (year % 100) != 0 || (year % 400) == 0) {
             System.out.println(year + " - високосный год.");
         } else {
             System.out.println(year + " - обычный год.");
